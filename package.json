@@ -5,14 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b \u0026\u0026 vite build",
+    "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "test": "node --test tests/*.test.js",
-    "format": "node node_modules/prettier/bin/prettier.cjs --write src tests index.html package.json package-lock.json tsconfig*.json README.md",
-    "format:check": "node node_modules/prettier/bin/prettier.cjs --check src tests index.html package.json package-lock.json tsconfig*.json README.md",
-    "check": "npm run typecheck \u0026\u0026 npm run lint \u0026\u0026 npm run format:check \u0026\u0026 npm test"
+    "format": "node node_modules/prettier/bin/prettier.cjs --write src api tests scripts vite.config.ts index.html package.json package-lock.json tsconfig*.json README.md CLAUDE.md .prettierrc.json",
+    "format:check": "node node_modules/prettier/bin/prettier.cjs --check src api tests scripts vite.config.ts index.html package.json package-lock.json tsconfig*.json README.md CLAUDE.md .prettierrc.json",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm test",
+    "prepare": "node scripts/prepare.mjs",
+    "lint:staged": "node node_modules/lint-staged/bin/lint-staged.js"
   },
   "dependencies": {
     "react": "^19.3.1",
@@ -27,6 +29,15 @@
     "typescript": "~7.0.2",
     "vite": "^8.3.5",
     "prettier": "^3.6.2",
-    "jsdom": "^26.1.0"
+    "jsdom": "^26.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.0"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,jsx,ts,tsx}": [
+      "node node_modules/oxlint/bin/oxlint --fix",
+      "node node_modules/prettier/bin/prettier.cjs --write"
+    ],
+    "*.{css,html,json,jsonc,md,mdx,yml,yaml}": "node node_modules/prettier/bin/prettier.cjs --write"
   }
 }

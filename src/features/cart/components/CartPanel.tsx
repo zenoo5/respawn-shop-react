@@ -1,9 +1,10 @@
 ﻿import { useEffect, useRef } from "react";
-import { products } from "../../products/products.data";
+import type { Product } from "../../products/products.types";
 import { MAX_QUANTITY } from "../cart";
 import type { CartItem, CartTotals } from "../cart.types";
 import { formatMoney } from "../../../shared/utils/money";
 interface Props {
+  products: Product[];
   open: boolean;
   onClose: () => void;
   items: CartItem[];
@@ -16,6 +17,7 @@ interface Props {
   message: string;
 }
 export function CartPanel({
+  products,
   open,
   onClose,
   items,

@@ -1,5 +1,5 @@
 ﻿import assert from "node:assert/strict";
-import { after, test } from "node:test";
+import { after, beforeEach, test } from "node:test";
 import { JSDOM } from "jsdom";
 import { createServer } from "vite";
 import { act, createElement } from "react";
@@ -34,7 +34,7 @@ dom.window.HTMLDialogElement.prototype.close = function () {
   this.removeAttribute("open");
 };
 const server = await createServer({
-  server: { middlewareMode: true },
+  server: { middlewareMode: true, hmr: false, ws: false },
   appType: "custom",
 });
 after(async () => {
@@ -45,6 +45,13 @@ const { default: App } = await server.ssrLoadModule("/src/app/App.tsx");
 const { Catalog } = await server.ssrLoadModule(
   "/src/features/products/components/Catalog.tsx",
 );
+const { default: productsHandler } =
+  await server.ssrLoadModule("/api/products.ts");
+beforeEach((t) => {
+  t.mock.method(globalThis, "fetch", async (url) =>
+    productsHandler.fetch(new Request(new URL(url, "http://localhost"))),
+  );
+});
 const container = document.getElementById("root");
 function button(name) {
   const match = [...container.querySelectorAll("button")].find(
@@ -175,5 +182,109 @@ test("blocked storage keeps cart updates usable and reports the persistence erro
       configurable: true,
       value: workingStorage,
     });
+  }
+});
+
+test("loading, error/retry and success use HTTP results without overwriting saved carts", async (t) => {
+  const saved = JSON.stringify([{ id: "stray", quantity: 2 }]);
+  localStorage.setItem("respawn-shop-cart-v1", saved);
+  let resolveRequest;
+  const pending = new Promise((resolve) => {
+    resolveRequest = resolve;
+  });
+  let requests = 0;
+  t.mock.method(globalThis, "fetch", async () => {
+    requests += 1;
+    return requests === 1
+      ? pending
+      : productsHandler.fetch(new Request("http://localhost/api/products"));
+  });
+  const root = createRoot(container);
+  try {
+    await act(() => root.render(createElement(App)));
+    assert.match(container.textContent, /Loading games/);
+    assert.equal(
+      container.querySelector("#catalog").getAttribute("aria-busy"),
+      "true",
+    );
+    assert.equal(container.querySelectorAll(".product-card").length, 0);
+    assert.equal(localStorage.getItem("respawn-shop-cart-v1"), saved);
+    await act(async () => {
+      resolveRequest(
+        Response.json({ error: "Service unavailable" }, { status: 503 }),
+      );
+      await pending;
+    });
+    assert.match(
+      container.querySelector('[role="alert"]').textContent,
+      /Service unavailable/,
+    );
+    assert.equal(localStorage.getItem("respawn-shop-cart-v1"), saved);
+    await click(button("Try again"));
+    assert.equal(requests, 2);
+    assert.equal(container.querySelectorAll(".product-card").length, 12);
+    await click(button("Open cart, 2 items"));
+    assert.match(container.querySelector("dialog").textContent, /Stray/);
+    assert.equal(
+      container.querySelector(".total-row strong").textContent,
+      "$39.98",
+    );
+  } finally {
+    await act(() => root.unmount());
+    localStorage.clear();
+  }
+});
+
+test("an empty API response can be checked again and never clears persisted cart entries", async (t) => {
+  const saved = JSON.stringify([{ id: "stray", quantity: 1 }]);
+  localStorage.setItem("respawn-shop-cart-v1", saved);
+  let requests = 0;
+  t.mock.method(globalThis, "fetch", async () => {
+    requests += 1;
+    return requests === 1
+      ? Response.json({ items: [], total: 0 })
+      : productsHandler.fetch(new Request("http://localhost/api/products"));
+  });
+  const root = createRoot(container);
+  try {
+    await act(() => root.render(createElement(App)));
+    assert.match(container.textContent, /No games available/);
+    assert.equal(container.querySelectorAll(".product-card").length, 0);
+    assert.equal(localStorage.getItem("respawn-shop-cart-v1"), saved);
+    await click(button("Check again"));
+    assert.equal(container.querySelectorAll(".product-card").length, 12);
+    assert.ok(button("Open cart, 1 items"));
+  } finally {
+    await act(() => root.unmount());
+    localStorage.clear();
+  }
+});
+
+test("unmounted requests cannot replace a newer successful request", async (t) => {
+  let resolveRequest;
+  const pending = new Promise((resolve) => {
+    resolveRequest = resolve;
+  });
+  let requests = 0;
+  t.mock.method(globalThis, "fetch", async () => {
+    requests += 1;
+    return requests === 1
+      ? pending
+      : productsHandler.fetch(new Request("http://localhost/api/products"));
+  });
+  let root = createRoot(container);
+  await act(() => root.render(createElement(App)));
+  await act(() => root.unmount());
+  root = createRoot(container);
+  try {
+    await act(() => root.render(createElement(App)));
+    assert.equal(container.querySelectorAll(".product-card").length, 12);
+    await act(async () => {
+      resolveRequest(Response.json({ items: [], total: 0 }));
+      await pending;
+    });
+    assert.equal(container.querySelectorAll(".product-card").length, 12);
+  } finally {
+    await act(() => root.unmount());
   }
 });

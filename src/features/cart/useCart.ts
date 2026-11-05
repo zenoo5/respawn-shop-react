@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { products } from "../products/products.data";
+import type { Product } from "../products/products.types";
 import { addItem, decreaseItem, getCartTotals, removeItem } from "./cart";
 import { loadCart, saveCart } from "./cart.storage";
 import type { CartItem } from "./cart.types";
-export function useCart() {
+export function useCart(products: Product[]) {
   const [items, setItems] = useState(() => loadCart(products));
   const [storageError, setStorageError] = useState(false);
   const [message, setMessage] = useState("");

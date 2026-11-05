@@ -1,0 +1,12 @@
+{
+  "overrides": [
+    {
+      "files": [
+        "api/products.ts",
+        "src/features/products/products.api.ts",
+        "src/shared/api/client.ts"
+      ],
+      "options": { "singleQuote": true }
+    }
+  ]
+}

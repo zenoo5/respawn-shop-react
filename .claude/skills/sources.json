@@ -1,0 +1,366 @@
+{
+  "repository": "https://github.com/vercel-labs/agent-skills",
+  "ref": "main",
+  "files": [
+    {
+      "path": "skills/react-best-practices/AGENTS.md",
+      "sha": "4e340a50684a8e7811d5bfa4df48bd9989d0fd87"
+    },
+    {
+      "path": "skills/react-best-practices/README.md",
+      "sha": "f283e1c0c21c5b13c848452528c3949ff544846c"
+    },
+    {
+      "path": "skills/react-best-practices/SKILL.md",
+      "sha": "237988de4a66dd8a71d30a2c24ebe1a86b58d04e"
+    },
+    {
+      "path": "skills/react-best-practices/metadata.json",
+      "sha": "3bec38b176cc71d105895ec4678bbe79305dcb4c"
+    },
+    {
+      "path": "skills/composition-patterns/AGENTS.md",
+      "sha": "558bf9aa1e36db2161f1633c9bfae14a819f0508"
+    },
+    {
+      "path": "skills/composition-patterns/README.md",
+      "sha": "01f359b0e79ce544d1463057be54946e50d62bcd"
+    },
+    {
+      "path": "skills/composition-patterns/SKILL.md",
+      "sha": "d07025bf943345bc1cf15eb923594f889ff881f0"
+    },
+    {
+      "path": "skills/composition-patterns/metadata.json",
+      "sha": "3470b744190af044373abbfe80d94630c0cc6041"
+    },
+    {
+      "path": "skills/react-best-practices/rules/_sections.md",
+      "sha": "4d20c144bc3b9265fc5976c704a8dd60ed3a806a"
+    },
+    {
+      "path": "skills/react-best-practices/rules/_template.md",
+      "sha": "1e9e70703485021e0b969f5731f38c8b9f8694db"
+    },
+    {
+      "path": "skills/react-best-practices/rules/advanced-effect-event-deps.md",
+      "sha": "24d901b62be66f6088eb1de5b262e67f5c337d57"
+    },
+    {
+      "path": "skills/react-best-practices/rules/advanced-event-handler-refs.md",
+      "sha": "97e7ade243aa6dae50d6faa5111dea0d04778ead"
+    },
+    {
+      "path": "skills/react-best-practices/rules/advanced-init-once.md",
+      "sha": "73ee38e5e74c0afa28cb730afe3275479432092a"
+    },
+    {
+      "path": "skills/react-best-practices/rules/advanced-use-latest.md",
+      "sha": "9c7cb501693d4a9521697f13dbd5906dd99f0257"
+    },
+    {
+      "path": "skills/react-best-practices/rules/async-api-routes.md",
+      "sha": "6feda1ef0ac06b57b33c7b5bd6a19ca88d6c8a34"
+    },
+    {
+      "path": "skills/react-best-practices/rules/async-cheap-condition-before-await.md",
+      "sha": "5799d7f6ee6e9d70422048ab0cae06ca021d22b2"
+    },
+    {
+      "path": "skills/react-best-practices/rules/async-defer-await.md",
+      "sha": "460b5e16baf9c66f85e4169eb9d43e4d07f2ce94"
+    },
+    {
+      "path": "skills/react-best-practices/rules/async-dependencies.md",
+      "sha": "0484ebab993f3db78277e8731872473d02475e6d"
+    },
+    {
+      "path": "skills/react-best-practices/rules/async-parallel.md",
+      "sha": "64133f6c31fec81eaaabd712586337d20122e09f"
+    },
+    {
+      "path": "skills/react-best-practices/rules/async-suspense-boundaries.md",
+      "sha": "1fbc05b04ed2474637b12014a77688750e78f931"
+    },
+    {
+      "path": "skills/react-best-practices/rules/bundle-analyzable-paths.md",
+      "sha": "8276f156cf1aa8a611bd5bc3cadcb362e16ccd13"
+    },
+    {
+      "path": "skills/react-best-practices/rules/bundle-barrel-imports.md",
+      "sha": "22d1050196671b7bc9f9aaf88cc665ba6fa8deb0"
+    },
+    {
+      "path": "skills/react-best-practices/rules/bundle-conditional.md",
+      "sha": "99d6fc90e31d683d2b6b71353b92d620b484b644"
+    },
+    {
+      "path": "skills/react-best-practices/rules/bundle-defer-third-party.md",
+      "sha": "db041d1510e51defeade05926ba4e6bbad1068b5"
+    },
+    {
+      "path": "skills/react-best-practices/rules/bundle-dynamic-imports.md",
+      "sha": "60b62695e7a080e2020ff2242d8d841c5e3ecbc4"
+    },
+    {
+      "path": "skills/react-best-practices/rules/bundle-preload.md",
+      "sha": "7000504065472628ae614786a3faadd23b0435a7"
+    },
+    {
+      "path": "skills/react-best-practices/rules/client-event-listeners.md",
+      "sha": "aad4ae91605d715aad8e92b76bd7fb85c91d7cdf"
+    },
+    {
+      "path": "skills/react-best-practices/rules/client-localstorage-schema.md",
+      "sha": "d30a1a7d4f85b0d50a0808eaa1b382c6deb595f4"
+    },
+    {
+      "path": "skills/react-best-practices/rules/client-passive-event-listeners.md",
+      "sha": "ce39a889efb4452ec4c044555ff818301dcf7ece"
+    },
+    {
+      "path": "skills/react-best-practices/rules/client-swr-dedup.md",
+      "sha": "2a430f27fd6abdc1b1b2f809b7a60114ff506790"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-batch-dom-css.md",
+      "sha": "a62d84ed8149b6d4f173debc7043af03f8f8dd06"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-cache-function-results.md",
+      "sha": "180f8ac8fffd7e6ee320242d59d06565d40a12f8"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-cache-property-access.md",
+      "sha": "39eec9061b4ca820150cc8183fb73f9e0c91ce85"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-cache-storage.md",
+      "sha": "aa4a30c08176aabd27b41fa44d5c1981457b675f"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-combine-iterations.md",
+      "sha": "044d017ec3b24b53e46d638acd1d936a22ac6323"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-early-exit.md",
+      "sha": "f46cb89c6cbe06e481aba0136848e3b17263ba96"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-flatmap-filter.md",
+      "sha": "ee0edf0da256eb8b62c5a998c768c51eb520e8cd"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-hoist-regexp.md",
+      "sha": "dae3fefdc0a1db66badcd4875489715edcdb038b"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-index-maps.md",
+      "sha": "9d357a00b15ac67cdd638886f5197a13173a637d"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-length-check-first.md",
+      "sha": "8b89573630fdc3aa10564273f390ecc7e2b1cd3e"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-min-max-loop.md",
+      "sha": "4b6656e96aecf3ae6ade52974090ae8b3e3f2bb5"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-request-idle-callback.md",
+      "sha": "d81927e5f0ddb9fa4eece79197728bfc4382cbfe"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-set-map-lookups.md",
+      "sha": "680a4892ee291c432bf8e769a44d0f1eb102b74b"
+    },
+    {
+      "path": "skills/react-best-practices/rules/js-tosorted-immutable.md",
+      "sha": "eae8b3f8aed2c7a893ceaae4cab55fa1c444b309"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rendering-activity.md",
+      "sha": "c957a490b7c2688542766150741e85e066539251"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rendering-animate-svg-wrapper.md",
+      "sha": "646744cbe53b213c6fa5ead54ef107510e5be89d"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rendering-conditional-render.md",
+      "sha": "7e866f5852dac80e0822e7f7c33476f5c9fc22f1"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rendering-content-visibility.md",
+      "sha": "aa6656362b2c0dad9ffea788b5850843d6c0629e"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rendering-hoist-jsx.md",
+      "sha": "32d2f3fcea53dadcf847231ee20c60fa2c5c3049"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rendering-hydration-no-flicker.md",
+      "sha": "5cf0e79b69afd7564b965c09435a2c7ee79eb2bd"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rendering-hydration-suppress-warning.md",
+      "sha": "24ba2513a29f5259b3184695d2d4da25e03e42ac"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rendering-resource-hints.md",
+      "sha": "1290bef06baf459f85dc5856ffc4486951224a48"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rendering-script-defer-async.md",
+      "sha": "ee275ed1c06da8f1ae70e744e47965799eaebf02"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rendering-svg-precision.md",
+      "sha": "6d7712860365294936a1b736d29d3eb970b91da7"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rendering-usetransition-loading.md",
+      "sha": "0c1b0b98e884d2c77bdec66df754693bd48c7777"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-defer-reads.md",
+      "sha": "e867c95f02fe6ed6ac2f91fdf1c0922304e0423a"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-dependencies.md",
+      "sha": "47a4d92685702e3a3b07073c62a61800fa0a6d7d"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-derived-state-no-effect.md",
+      "sha": "3d9fe4050794ea6655add6bee50cfbc104e5dc31"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-derived-state.md",
+      "sha": "e5c899f6c073338bbd1b73c0275bc3e5e7d9ae7b"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-functional-setstate.md",
+      "sha": "b004ef45e347503947fee397b6c3d163b0a317fb"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-lazy-state-init.md",
+      "sha": "4ecb350fbadff3db805b72429276e672d42736dc"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-memo-with-default-value.md",
+      "sha": "63570491848cb42c2bc7073bceb754893a6a4cfa"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-memo.md",
+      "sha": "f8982ab612105a3b7faee1292b797338e7fb5271"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-move-effect-to-event.md",
+      "sha": "dd58a1af091b3cf5cb271d25904af4feb836d1aa"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-no-inline-components.md",
+      "sha": "d97592acefced05bc4a8538c77d226fa24c08534"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-simple-expression-in-memo.md",
+      "sha": "59dfab0f3b048097627e0ca6e4c8da36629a5268"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-split-combined-hooks.md",
+      "sha": "89d805644dbffe3877bc1356bdf8ad416a5c715b"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-transitions.md",
+      "sha": "d99f43f764232e994a49a1df89ec9d624552f439"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-use-deferred-value.md",
+      "sha": "619c04b0142bf5a5b7d0f69532a56b797a78f664"
+    },
+    {
+      "path": "skills/react-best-practices/rules/rerender-use-ref-transient-values.md",
+      "sha": "cf04b81f8a531eacd07a32e8917fb3ed3c1bbecb"
+    },
+    {
+      "path": "skills/react-best-practices/rules/server-after-nonblocking.md",
+      "sha": "e8f5b260f5fc6d58141bc61e0a091569adb81e7e"
+    },
+    {
+      "path": "skills/react-best-practices/rules/server-auth-actions.md",
+      "sha": "ee82c0442bc69ffae7bf20c07709d57893da1123"
+    },
+    {
+      "path": "skills/react-best-practices/rules/server-cache-lru.md",
+      "sha": "ef6938aa53c55dc3c0035bd6c66838810d870260"
+    },
+    {
+      "path": "skills/react-best-practices/rules/server-cache-react.md",
+      "sha": "87c9ca33168a321a59fbaaa84843e2f48c99751a"
+    },
+    {
+      "path": "skills/react-best-practices/rules/server-dedup-props.md",
+      "sha": "fb24a2562c73fadbb9a11a79897c2cf93ea3c69a"
+    },
+    {
+      "path": "skills/react-best-practices/rules/server-hoist-static-io.md",
+      "sha": "25205c2fc42d0dd684d6423acde642774329a8cc"
+    },
+    {
+      "path": "skills/react-best-practices/rules/server-no-shared-module-state.md",
+      "sha": "ff7d9f29c6e0e42ec1471acec8a3c7f394c8358d"
+    },
+    {
+      "path": "skills/react-best-practices/rules/server-parallel-fetching.md",
+      "sha": "1affc835a601a894fd02de08e6c9cdfd76d34b64"
+    },
+    {
+      "path": "skills/react-best-practices/rules/server-parallel-nested-fetching.md",
+      "sha": "be1dc25075e40e6bda46cb24dc5a6f42b916b0e8"
+    },
+    {
+      "path": "skills/react-best-practices/rules/server-serialization.md",
+      "sha": "39c5c4164c31be7f171ea2f4b3b32fe47709a651"
+    },
+    {
+      "path": "skills/composition-patterns/rules/_sections.md",
+      "sha": "f921dd41b53e4d847f25a6b3eca25a4e8857db44"
+    },
+    {
+      "path": "skills/composition-patterns/rules/_template.md",
+      "sha": "119a30167f162c439f05e73c63044c590dff645c"
+    },
+    {
+      "path": "skills/composition-patterns/rules/architecture-avoid-boolean-props.md",
+      "sha": "ccee19ce495b9d7fdf08867db3c6b6282006312e"
+    },
+    {
+      "path": "skills/composition-patterns/rules/architecture-compound-components.md",
+      "sha": "e5e3043cb5a81b83dce0389848b828455f00854f"
+    },
+    {
+      "path": "skills/composition-patterns/rules/patterns-children-over-render-props.md",
+      "sha": "d4345ee30aea5f1b11815251edca7ebd0aefe2e2"
+    },
+    {
+      "path": "skills/composition-patterns/rules/patterns-explicit-variants.md",
+      "sha": "56e32e8bee5e5768f747db4e9718a6c2b54bfce5"
+    },
+    {
+      "path": "skills/composition-patterns/rules/react19-no-forwardref.md",
+      "sha": "e0d8f8a76f14888f2fafc8cccd3d9395e4711d0d"
+    },
+    {
+      "path": "skills/composition-patterns/rules/state-context-interface.md",
+      "sha": "d961bede0c6c6e318f6ba3aca9b5dfcdb768d8f9"
+    },
+    {
+      "path": "skills/composition-patterns/rules/state-decouple-implementation.md",
+      "sha": "71a5afaa7d7078c262c92d32c3b97723de62f99f"
+    },
+    {
+      "path": "skills/composition-patterns/rules/state-lift-state.md",
+      "sha": "d7fe27b54933135f9050365b6c2001c101029d51"
+    }
+  ]
+}

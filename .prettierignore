@@ -1,2 +1,5 @@
 node_modules
 public/images
+
+# Preserve vendored Vercel skill sources unchanged
+.claude/skills/

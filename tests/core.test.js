@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { after, test } from "node:test";
 import { createServer } from "vite";
 const server = await createServer({
-  server: { middlewareMode: true },
+  server: { middlewareMode: true, hmr: false, ws: false },
   appType: "custom",
 });
 after(() => server.close());
