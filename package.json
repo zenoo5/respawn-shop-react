@@ -1,0 +1,32 @@
+{
+  "name": "respawn-shop2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b \u0026\u0026 vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "test": "node --test tests/*.test.js",
+    "format": "node node_modules/prettier/bin/prettier.cjs --write src tests index.html package.json package-lock.json tsconfig*.json README.md",
+    "format:check": "node node_modules/prettier/bin/prettier.cjs --check src tests index.html package.json package-lock.json tsconfig*.json README.md",
+    "check": "npm run typecheck \u0026\u0026 npm run lint \u0026\u0026 npm run format:check \u0026\u0026 npm test"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.89.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.5",
+    "prettier": "^3.6.2",
+    "jsdom": "^26.1.0"
+  }
+}
